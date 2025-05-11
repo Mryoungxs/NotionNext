@@ -38,7 +38,7 @@ module.exports = {
     // 示例音乐列表。除了以下配置外，还可配置歌词，具体配置项看此文档 https://aplayer.js.org/#/zh-Hans/
     {
       name: '雨过天晴',
-      artist: '街憬 / 抹茶茶子cha',
+      artist: 'Falcom Sound Team jdk',
       url: 'https://music.163.com/song/media/outer/url?id=1999085853.mp3',
       cover:
         'https://p1.music.126.net/9DJPJUPUG2RwZBnAaA9YDA==/109951168264949359.jpg'
