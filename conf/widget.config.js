@@ -41,7 +41,7 @@ module.exports = {
       artist: '街憬 / 抹茶茶子cha',
       url: 'https://music.163.com/song/media/outer/url?id=2123307979.mp3',
       cover:
-        'https://p2.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+        'https://p1.music.126.net/9DJPJUPUG2RwZBnAaA9YDA==/109951168264949359.jpg?param=90y90'
     },
     {
       name: '王都グランセル',
