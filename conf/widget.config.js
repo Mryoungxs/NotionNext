@@ -39,7 +39,7 @@ module.exports = {
     {
       name: '雨过天晴',
       artist: '街憬 / 抹茶茶子cha',
-      url: 'https://music.163.com/#/outchain/2/2123307979/',
+      url: 'https://music.163.com/song/media/outer/url?id=2123307979.mp3',
       cover:
         'https://p2.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
     },
