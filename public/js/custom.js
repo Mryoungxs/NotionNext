@@ -13,7 +13,7 @@ function initClickEffect(options = {}) {
         particleCount: 20,      // 粒子数量
         particleSize: [2, 12],   // 粒子大小范围（px）
         particleDistance: [50, 150], // 飞散距离（px）
-        particleSpeed: [100, 300],  // 粒子速度（px/秒）
+        particleSpeed: [40, 100],  // 粒子速度（px/秒）
         
         ...options // 自定义参数
     };
