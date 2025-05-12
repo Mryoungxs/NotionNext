@@ -7,23 +7,25 @@
     content: "\f05a";
 }
 
-
-.text-popup {
-    animation: textPopup 1s;
-    color: red;
-    user-select: none;
-    white-space: nowrap;
+/* 爆炸粒子的基础样式 */
+.explosion-particle {
     position: absolute;
-    z-index: 99;
+    border-radius: 50%; /* 圆形粒子 */
+    pointer-events: none; /* 防止粒子阻挡点击事件 */
+    user-select: none;
+    z-index: 100;
+    opacity: 1;
+    animation: explode 1s ease-out forwards;
 }
-@keyframes textPopup {
-    0%, 100% {
-        opacity: 0;
-    }
-    5% {
+
+/* 爆炸动画关键帧 */
+@keyframes explode {
+    0% {
+        transform: translate(0, 0) scale(1);
         opacity: 1;
     }
     100% {
-        transform: translateY(-50px);    
+        transform: translate(var(--tx), var(--ty)) scale(0.2);
+        opacity: 0;
     }
 }
