@@ -7,50 +7,36 @@
     content: "\f05a";
 }
 
-/* 圆圈扩散样式 */
+/* 圆圈扩散效果 */
 .click-circle {
     position: absolute;
-    border-radius: 50%;      /* 圆形 */
-    pointer-events: none;    /* 不阻挡点击事件 */
-    transform: translate(-50%, -50%); /* 中心对齐 */
-    opacity: 0.6;            /* 初始透明度 */
-    z-index: 99;             /* 图层低于粒子 */
-    border: 2px solid;       /* 边框样式（颜色由JS动态设置） */
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+    z-index: 99;
+    border: 2px solid;
+    animation: circleExpand 0.8s ease-out forwards;
 }
 
-/* 爆炸粒子样式 */
+@keyframes circleExpand {
+    0% { width: 0; height: 0; opacity: 0.6; }
+    100% { width: var(--circle-size); height: var(--circle-size); opacity: 0; }
+}
+
+/* 爆炸粒子效果 */
 .explosion-particle {
     position: absolute;
-    border-radius: 50%;      /* 圆形粒子 */
+    border-radius: 50%;
     pointer-events: none;
-    z-index: 100;            /* 显示在最上层 */
-    /* 动画由JS动态设置（通过--duration变量） */
+    z-index: 100;
     animation: explode var(--duration) ease-out forwards;
 }
 
-/* 粒子飞散动画 */
 @keyframes explode {
-    0% {
-        transform: translate(0, 0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        /* 位移由JS动态设置（通过--tx/--ty变量） */
-        transform: translate(var(--tx), var(--ty)) scale(0.2);
-        opacity: 0;
-    }
-}
-
-/* 圆圈扩散动画（由JS动态注入） */
-@keyframes circleExpand {
-    0% {
-        width: 0;
-        height: 0;
-        opacity: 0.6;
-    }
-    100% {
-        width: var(--circle-size);
-        height: var(--circle-size);
-        opacity: 0;
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { 
+        transform: translate(var(--tx), var(--ty)) scale(0.2); 
+        opacity: 0; 
     }
 }
