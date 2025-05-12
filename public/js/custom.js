@@ -1,42 +1,51 @@
 // 这里编写自定义js脚本；将被静态引入到页面中
-/**
- * 封装文字弹出的函数
- * @param {*} arr
- * @param {*} options
- * @returns
- */
-const fnTextPopup = function (arr, options) {
-  // arr参数是必须的
-  if (!arr || !arr.length) {
-    return
-  }
-  // 主逻辑
-  let index = 0
-  document.documentElement.addEventListener('click', function (event) {
-    const x = event.pageX; const y = event.pageY
-    const eleText = document.createElement('span')
-    // 随机颜色
-    eleText.style.color = 'rgb(' + 255 * Math.random() + ',' + 255 * Math.random() + ',' + 255 * Math.random() + ')'
-    // 动画样式
-    eleText.className = 'text-popup'
-    this.appendChild(eleText)
-    if (arr[index]) {
-      eleText.innerHTML = arr[index]
-    } else {
-      index = 0
-      eleText.innerHTML = arr[0]
-    }
-    // 动画结束后删除自己
-    eleText.addEventListener('animationend', function () {
-      eleText.parentNode.removeChild(eleText)
-    })
-    // 位置
-    eleText.style.left = (x - eleText.clientWidth / 2) + 'px'
-    eleText.style.top = (y - eleText.clientHeight) + 'px'
-    // index递增
-    index++
-  })
+const fnExplosionEffect = function (options = {}) {
+    document.documentElement.addEventListener("click", (event) => {
+        const { pageX: x, pageY: y } = event;
+        const particleCount = options.particleCount || 20; // 默认 20 个粒子
+        
+        for (let i = 0; i < particleCount; i++) {
+            createParticle(x, y);
+        }
+    });
+};
+
+function createParticle(x, y) {
+    const particle = document.createElement("div");
+    particle.className = "explosion-particle";
+    
+    // 随机大小 (2px ~ 8px)
+    const size = Math.random() * 6 + 2;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+    
+    // 随机颜色 (RGB)
+    particle.style.backgroundColor = `rgb(
+        ${Math.floor(Math.random() * 255)},
+        ${Math.floor(Math.random() * 255)},
+        ${Math.floor(Math.random() * 255)}
+    )`;
+    
+    // 随机运动方向 (--tx, --ty)
+    const angle = Math.random() * Math.PI * 2; // 0~360°
+    const distance = Math.random() * 100 + 50; // 50px~150px
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+    
+    particle.style.setProperty("--tx", `${tx}px`);
+    particle.style.setProperty("--ty", `${ty}px`);
+    
+    // 初始位置（鼠标点击点）
+    particle.style.left = `${x - size / 2}px`;
+    particle.style.top = `${y - size / 2}px`;
+    
+    // 动画结束后移除粒子
+    particle.addEventListener("animationend", () => {
+        particle.remove();
+    });
+    
+    document.body.appendChild(particle);
 }
 
-// 执行，传入文字内容
-fnTextPopup(['❤富强❤', '❤民主❤', '❤文明❤', '❤和谐❤', '❤自由❤', '❤平等❤', '❤公正❤', '❤法治❤', '❤爱国❤', '❤敬业❤', '❤诚信❤', '❤友善❤'])
+// 调用示例
+fnExplosionEffect({ particleCount: 30 }); // 可自定义粒子数量
