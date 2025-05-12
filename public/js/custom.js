@@ -11,7 +11,7 @@ function initClickEffect(options = {}) {
         
         // 粒子参数
         particleCount: 20,      // 粒子数量
-        particleSize: [2, 8],   // 粒子大小范围（px）
+        particleSize: [2, 12],   // 粒子大小范围（px）
         particleDistance: [50, 150], // 飞散距离（px）
         particleSpeed: [100, 300],  // 粒子速度（px/秒）
         
@@ -76,7 +76,13 @@ function initClickEffect(options = {}) {
 }
 
 // 调用（默认参数）
-initClickEffect();
+initClickEffect({
+            circleColor: 'random', // 金色半透明圆圈
+            circleSize: 70,
+            particleCount: 30,
+            particleSpeed: [40, 100], // 更快的粒子
+            particleDistance: [80, 200]
+        });
 
 // 如需自定义：
 // initClickEffect({ 
