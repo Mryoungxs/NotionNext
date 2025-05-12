@@ -15,7 +15,7 @@ function createParticle(x, y) {
     particle.className = "explosion-particle";
     
     // 随机大小 (2px ~ 8px)
-    const size = Math.random() * 6 + 2;
+    const size = Math.random() * 7 + 5;
     particle.style.width = `${size}px`;
     particle.style.height = `${size}px`;
     
