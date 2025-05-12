@@ -37,18 +37,18 @@ module.exports = {
   MUSIC_PLAYER_AUDIO_LIST: [
     // 示例音乐列表。除了以下配置外，还可配置歌词，具体配置项看此文档 https://aplayer.js.org/#/zh-Hans/
     {
-      name: '雨过天晴1111',
-      artist: 'Falcom Sound Team jdk',
+      name: '故事',
+      artist: '盛哲',
       url: 'https://music.163.com/song/media/outer/url?id=1996332662.mp3',
       cover:
-        'https://p1.music.126.net/9DJPJUPUG2RwZBnAaA9YDA==/109951168264949359.jpg'
+        'https://p2.music.126.net/xPaYfk5OworqCe8-1dQ-jA==/109951168039494932.jpg'
     },
     {
-      name: '王都グランセル',
-      artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731355.mp3',
+      name: '雨过天晴时',
+      artist: '街憬 抹茶茶子cha',
+      url: 'https://music.163.com/song/media/outer/url?id=2123307979.mp3',
       cover:
-        'https://p1.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+        'https://p2.music.126.net/9DJPJUPUG2RwZBnAaA9YDA==/109951168264949359.jpg'
     }
   ],
   MUSIC_PLAYER_METING: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING || false, // 是否要开启 MetingJS，从平台获取歌单。会覆盖自定义的 MUSIC_PLAYER_AUDIO_LIST，更多配置信息：https://github.com/metowolf/MetingJS
