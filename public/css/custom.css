@@ -7,36 +7,22 @@
     content: "\f05a";
 }
 
-/* 圆圈扩散效果 */
-.click-circle {
+.text-popup {
+    animation: textPopup 1s;
+    color: red;
+    user-select: none;
+    white-space: nowrap;
     position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 0.6;
     z-index: 99;
-    border: 2px solid;
-    animation: circleExpand 0.8s ease-out forwards;
 }
-
-@keyframes circleExpand {
-    0% { width: 0; height: 0; opacity: 0.6; }
-    100% { width: var(--circle-size); height: var(--circle-size); opacity: 0; }
-}
-
-/* 爆炸粒子效果 */
-.explosion-particle {
-    position: absolute;
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 100;
-    animation: explode var(--duration) ease-out forwards;
-}
-
-@keyframes explode {
-    0% { transform: translate(0, 0) scale(1); opacity: 1; }
-    100% { 
-        transform: translate(var(--tx), var(--ty)) scale(0.2); 
-        opacity: 0; 
+@keyframes textPopup {
+    0%, 100% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-50px);    
     }
 }
