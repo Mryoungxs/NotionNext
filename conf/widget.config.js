@@ -39,7 +39,7 @@ module.exports = {
     {
       name: '雨过天晴',
       artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731355.mp3',
+      url: 'https://music.163.com/song/media/outer/url?id=1996332662.mp3',
       cover:
         'https://p1.music.126.net/9DJPJUPUG2RwZBnAaA9YDA==/109951168264949359.jpg'
     },
